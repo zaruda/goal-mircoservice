@@ -16,6 +16,8 @@ async function bootstrap() {
       },
     },
   );
-  await app.listen(() => "Microservice 'goal-service' is listening");
+  await app.listen(() =>
+    console.info("Microservice 'goal-service' is listening"),
+  );
 }
 bootstrap();
