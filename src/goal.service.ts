@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Goal, GoalDocument } from 'src/db/schemas/goal/goal.schema';
-import { CreateGoalEntity } from 'src/entities/goal';
+import { Goal, GoalDocument } from 'src/db/goal.schema';
+import CreateGoalEntity from 'src/db/create-goal.entity';
 
 @Injectable()
 export class GoalService {

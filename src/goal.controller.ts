@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import { Goal } from 'src/db/schemas/goal/goal.schema';
-import { CreateGoalEntity } from 'src/entities/goal';
+import { Goal } from 'src/db/goal.schema';
+import CreateGoalEntity from 'src/db/create-goal.entity';
 import { GoalService } from './goal.service';
 
 @Controller('goal')
