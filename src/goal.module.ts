@@ -1,12 +1,17 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 
-import goalTable from 'src/db/goal.table';
+import GoalTable from 'src/db/goal.table';
 import { GoalController } from './goal.controller';
 import { GoalService } from './goal.service';
-import databaseModule from './db';
+import DatabaseModule from './db';
 
 @Module({
-  imports: [databaseModule, goalTable],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    DatabaseModule,
+    GoalTable,
+  ],
   controllers: [GoalController],
   providers: [GoalService],
 })
