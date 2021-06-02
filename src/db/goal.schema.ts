@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Goal {
-  @Prop()
+  @Prop({ required: true })
   date: string;
 }
 
