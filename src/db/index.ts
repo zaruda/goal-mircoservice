@@ -1,10 +1,11 @@
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AppConfigModule } from 'src/config/config.module';
+import { AppConfigService } from 'src/config/config.service';
 
 export default MongooseModule.forRootAsync({
-  imports: [ConfigModule],
-  useFactory: async (configService: ConfigService) => ({
-    uri: configService.get<string>('MONGODB_URI'),
+  imports: [AppConfigModule],
+  useFactory: async (configService: AppConfigService) => ({
+    uri: configService.mongodbUri,
   }),
-  inject: [ConfigService],
+  inject: [AppConfigService],
 });
