@@ -11,7 +11,7 @@ async function bootstrap() {
         urls: [process.env.RABBITMQ_URI],
         queue: 'goals',
         queueOptions: {
-          durable: false,
+          durable: true,
         },
       },
     },
