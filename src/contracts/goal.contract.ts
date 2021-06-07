@@ -1,4 +1,4 @@
-class GoalContract {
+interface GoalContract {
   id: string;
   date: string;
   name: string;
