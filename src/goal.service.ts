@@ -20,7 +20,7 @@ export class GoalService {
   }
 
   async findById(id: string): Promise<Goal> {
-    return await this.repository.findOneOrFail(id);
+    return await this.repository.findOneOrFail({ where: { id } });
   }
 
   async updateById(id: string, goal: UpdateGoalEntity): Promise<Goal> {
